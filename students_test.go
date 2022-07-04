@@ -35,7 +35,7 @@ func TestLen(t *testing.T) {
 func TestLessBirthday(t *testing.T) {
 	var persons People
 	persons = append(persons, Person{"same", "lastsame", time.Now()})
-	persons = append(persons, Person{"same", "lastsame", time.Now().AddDate(20, 5, 21)})
+	persons = append(persons, Person{"same", "lastsame", time.Now().AddDate(2, 5, 21)})
 
 	less := persons.Less(0, 1)
 
@@ -50,7 +50,7 @@ func TestLessLastName(t *testing.T) {
 
 	less := persons.Less(0, 1)
 
-	if less != false {
+	if less != true {
 		t.Errorf("Expected %t, but got %t", false, less)
 	}
 }
@@ -95,7 +95,7 @@ func TestNewMatrix(t *testing.T) {
 	if matrix.cols != matrix.rows {
 		t.Error("Cols must be 3")
 	}
-	if matrix.data[3] != 4 {
+	if matrix.data[3] != 5 {
 		t.Error("wrong data")
 	}
 }
