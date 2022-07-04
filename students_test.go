@@ -106,6 +106,13 @@ func TestMatrixWithStringError(t *testing.T) {
 		t.Errorf("matrix with word")
 	}
 }
+func TestMatrixErrorLength(t *testing.T) {
+	_, err := New("1 2 3\n 4 5 6\n 7 8 9 4")
+
+	if err == nil {
+		t.Errorf("Error Length")
+	}
+}
 func TestMatrixIfEmpty(t *testing.T) {
 	_, err := New("")
 
