@@ -39,7 +39,7 @@ func TestLess(t *testing.T) {
 
 	less := persons.Less(0, 1)
 
-	if !less {
+	if less != false {
 		t.Errorf("Expected %t, but got %t", true, less)
 	}
 }
@@ -64,10 +64,10 @@ func TestNewMatrix(t *testing.T) {
 		t.Errorf("Unexpected error")
 	}
 
-	if matrix.rows != 3 {
+	if matrix.rows != 2 {
 		t.Error("Rows must be 3")
 	}
-	if matrix.cols != 3 {
+	if matrix.cols != 2 {
 		t.Error("Cols must be 3")
 	}
 	if matrix.cols != matrix.rows {
@@ -117,7 +117,7 @@ func TestSet(t *testing.T) {
 
 	set := matrix.Set(1, 0, 69)
 
-	if set && matrix.data[4] != 99 {
+	if set && matrix.data[4] != 69 {
 		t.Errorf("Expected value 99, but got %d", matrix.data[4])
 	}
 }
